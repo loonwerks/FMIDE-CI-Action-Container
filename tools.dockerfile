@@ -16,10 +16,10 @@ RUN apt-get update -q \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-# Copies script for construction of AGREE tool into the container
+# Copies script for construction of FMIDE tool into the container
 COPY make_fmide.sh /make_fmide.sh
 RUN chmod +x /make_fmide.sh
 
-# Run the make agree script to download and install AGREE
+# Run the make agree script to download and install FMIDE
 RUN /make_fmide.sh
 
