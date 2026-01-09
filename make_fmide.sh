@@ -15,6 +15,9 @@ set -Eeuxo pipefail
 : "${BRIEFCASE_UPDATE_SITE:=https://raw.githubusercontent.com/loonwerks/Briefcase-Updates/master/}"
 : "${BRIEFCASE_FEATURE_ID:=com.collins.trustedsystems.briefcase.feature.feature.group}"
 : "${BRIEFCASE_VERSION:=0.9.2}"
+: "${HAMR_UPDATE_SITE:=https://raw.githubusercontent.com/sireum/hamr-plugin-update-site/master/}"
+: "${HAMR_FEATURE_ID:=org.sireum.aadl.osate.hamr.feature.feature.group}"
+: "${HAMR_VERSION:=1.0.2106151941.202106152016}"
 
 rm -rf ${FMIDE_DIR}
 mkdir -p ${FMIDE_DIR}
@@ -25,3 +28,4 @@ popd
 ${FMIDE_DIR}/osate -nosplash -console -consoleLog -application org.eclipse.equinox.p2.director -repository ${RESOLUTE_UPDATE_SITE} -installIU ${RESOLUTE_FEATURE_ID}/${RESOLUTE_VERSION}
 ${FMIDE_DIR}/osate -nosplash -console -consoleLog -application org.eclipse.equinox.p2.director -repository ${AGREE_UPDATE_SITE} -installIU ${AGREE_FEATURE_ID}/${AGREE_VERSION}
 ${FMIDE_DIR}/osate -nosplash -console -consoleLog -application org.eclipse.equinox.p2.director -repository ${BRIEFCASE_UPDATE_SITE} -installIU ${BRIEFCASE_FEATURE_ID}/${BRIEFCASE_VERSION}
+${FMIDE_DIR}/osate -nosplash -console -consoleLog -application org.eclipse.equinox.p2.director -repository ${HAMR_UPDATE_SITE} -installIU ${HAMR_FEATURE_ID}/${HAMR_VERSION}
